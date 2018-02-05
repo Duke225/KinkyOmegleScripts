@@ -77,7 +77,7 @@
 
     // Message Handlers
     function handlePleasure(msg) {
-        const match = e.detail.match(/^!pleasure\s*([0-9]+)?\s*([0-9]+)?\s*$/i);
+        const match = msg.match(/^!pleasure\s*([0-9]+)?\s*([0-9]+)?\s*$/i);
         if (match) {
             pulseToys(parseInt(match[1]) || 1, match[2] ? parseInt(match[2]) * 1000 : 1000);
         }
