@@ -4,6 +4,7 @@
 // @version      0.1
 // @description  Allows the Stranger to control your sex toys.
 // @author       Duke225
+// @downloadURL  https://duke225.github.io/KinkyOmegleScripts/OmegleToyController.user.js
 // @match        https://www.omegle.com/
 // @connect      lovense.club
 // @connect      lovense.com
