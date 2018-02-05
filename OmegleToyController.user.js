@@ -33,7 +33,6 @@
                 const baseUrl = `https://${host.domain}:${host.httpsPort}`;
                 for (const toyId in host.toys) {
                     const toy = host.toys[toyId];
-                    console.log(toy);
                     toys.push({
                         id: toyId,
                         name: toy.nickName ? toy.nickName : toy.name,
@@ -49,7 +48,7 @@
     let currentPulse;
     function pulseToys(level = 1, duration = 1000) {
         return Promise.resolve(currentPulse).then((e) => {
-            console.log(`${new Date().toISOString()}: Vibrating toys at speed ${level}/20 for ${duration}ms.`);
+            console.log(`$Vibrating toys at speed ${level}/20 for ${duration}ms.`);
             currentPulse = new Promise(resolve => {
                 const startRequests = [];
                 toys.forEach(toy => {
@@ -72,14 +71,13 @@
     }
 
     getToys()
-        .then(toys => { console.log('Fetched toy list', toys); })
+        .then(toys => { console.log('Fetched toy list.'); })
         .then(() => { pulseToys(1, 500); })
         .catch(console.log);
 
     // Message Handlers
     function handlePleasure(msg) {
         const match = e.detail.match(/^!pleasure\s*([0-9]+)?\s*([0-9]+)?\s*$/i);
-        console.log('message match', match);
         if (match) {
             pulseToys(parseInt(match[1]) || 1, match[2] ? parseInt(match[2]) * 1000 : 1000);
         }
